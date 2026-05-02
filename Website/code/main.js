@@ -221,8 +221,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     heroContainer.style.opacity = '1'; // Ensure it's opaque
                 }
                 
-                // Background Color Toggle
-                if (scrollY > windowHeight * 0.1) {
+                // Background Color & Navbar Toggle
+                if (scrollY > windowHeight * 0.9) {
                     document.body.classList.add('scrolled');
                 } else {
                     document.body.classList.remove('scrolled');
