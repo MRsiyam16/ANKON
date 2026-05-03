@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=1.1">
+    <link rel="stylesheet" href="style.css?v=1.6">
 </head>
 <body>
     <div id="loader">
@@ -364,8 +364,89 @@
             </div>
         </div>
     </section>
+    
+    <!-- Contact Section -->
+    <section class="contact-cta" id="contact">
+        <div class="container">
+            <div class="contact-wrapper">
+                <span class="section-label">[ WORK WITH US ]</span>
+                
+                <div class="step-form-wrapper" id="step-form">
+                    <div class="step-container active" data-step="1">
+                        <h3 class="step-question">First, what should we call you?</h3>
+                        <div class="input-field">
+                            <input type="text" id="contact-name" placeholder="Type your name here..." autocomplete="name">
+                            <div class="focus-line"></div>
+                        </div>
+                        <button class="btn-next-step">CONTINUE</button>
+                    </div>
+
+                    <div class="step-container" data-step="2">
+                        <h3 class="step-question">Which service drives your interest?</h3>
+                        <div class="option-grid">
+                            <button class="option-btn" data-value="UI/UX Design">UI/UX DESIGN</button>
+                            <button class="option-btn" data-value="Web Engineering">WEB ENGINEERING</button>
+                            <button class="option-btn" data-value="Branding">BRANDING</button>
+                            <button class="option-btn" data-value="Growth Consulting">GROWTH CONSULTING</button>
+                        </div>
+                    </div>
+
+                    <div class="step-container" data-step="3">
+                        <h3 class="step-question">Where can we send our analysis?</h3>
+                        <div class="input-field">
+                            <input type="email" id="contact-email" placeholder="Email Address" autocomplete="email">
+                            <div class="focus-line"></div>
+                        </div>
+                        <button class="btn-next-step">COMPLETE INQUIRY</button>
+                    </div>
+
+                    <div class="step-container" data-step="4" id="form-success">
+                        <div class="success-content">
+                            <div class="success-icon">&check;</div>
+                            <h3 class="step-question">Transmission Received</h3>
+                            <p>Our lead architect will contact you within 24 hours.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">ANKON</div>
+                    <p>Engineering digital excellence for the top 1%.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>STUDIO</h4>
+                        <a href="#services">Services</a>
+                        <a href="#portfolio">Portfolio</a>
+                        <a href="#philosophy">Philosophy</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>LEGAL</h4>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>CONNECT</h4>
+                        <a href="#">X / Twitter</a>
+                        <a href="#">LinkedIn</a>
+                        <a href="#">Instagram</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ANKON AGENCY. ALL RIGHTS RESERVED.</p>
+                <p>CRAFTED IN ZURICH.</p>
+            </div>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/motion@11.11.13/dist/motion.global.js"></script>
-    <script src="main.js?v=1.1"></script>
+    <script src="main.js?v=1.6"></script>
 </body>
 </html>

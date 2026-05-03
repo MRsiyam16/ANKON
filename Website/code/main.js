@@ -395,5 +395,59 @@ document.addEventListener('DOMContentLoaded', () => {
             updateTestSlider();
         }, { margin: "-100px" });
     }
+
+    // --- Multi-Step Form Logic ---
+    const stepForm = document.getElementById('step-form');
+    if (stepForm) {
+        const steps = stepForm.querySelectorAll('.step-container');
+        const nextBtns = stepForm.querySelectorAll('.btn-next-step');
+        const optionBtns = stepForm.querySelectorAll('.option-btn');
+        let currentStep = 0;
+
+        const showStep = (index) => {
+            steps.forEach((step, i) => {
+                if (i === index) {
+                    step.classList.add('active');
+                    if (window.Motion) {
+                        const { animate } = window.Motion;
+                        animate(
+                            step,
+                            { opacity: [0, 1], y: [40, 0] },
+                            { duration: 1, easing: [0.16, 1, 0.3, 1] }
+                        );
+                    }
+                } else {
+                    step.classList.remove('active');
+                }
+            });
+        };
+
+        nextBtns.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                const input = steps[currentStep].querySelector('input');
+                if (input && !input.value.trim()) {
+                    input.style.borderColor = 'rgba(18, 18, 18, 0.3)';
+                    return;
+                }
+
+                currentStep++;
+                if (currentStep < steps.length) {
+                    showStep(currentStep);
+                }
+            });
+        });
+
+        optionBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                optionBtns.forEach(b => b.classList.remove('selected'));
+                btn.classList.add('selected');
+                
+                setTimeout(() => {
+                    currentStep++;
+                    showStep(currentStep);
+                }, 600);
+            });
+        });
+    }
 });
 
