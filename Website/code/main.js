@@ -564,6 +564,34 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileMenuTrigger.addEventListener('click', () => {
             mobileMenu.classList.toggle('active');
         });
+
+        // Close menu when a link is clicked
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+    }
+
+    // 10. Click to Copy Email
+    const copyEmailBtn = document.getElementById('copy-email');
+    if (copyEmailBtn) {
+        copyEmailBtn.addEventListener('click', function() {
+            const email = this.querySelector('.email-text').innerText;
+            const status = this.querySelector('.copy-status');
+            const originalStatus = status.innerText;
+
+            navigator.clipboard.writeText(email).then(() => {
+                status.innerText = "Copied!";
+                status.style.color = "#25D366";
+                
+                setTimeout(() => {
+                    status.innerText = originalStatus;
+                    status.style.color = "";
+                }, 2000);
+            });
+        });
     }
 });
 
