@@ -394,6 +394,56 @@ document.addEventListener('DOMContentLoaded', () => {
             // Initialize slider state
             updateTestSlider();
         }, { margin: "-100px" });
+
+        // --- Footer Animations ---
+        const footerBigText = document.querySelector('.footer-giant-text');
+        const footerElements = document.querySelectorAll('.footer-top > *, .footer-bottom > *');
+
+        inView('.footer', () => {
+            animate(
+                footerBigText,
+                { opacity: [0, 1], y: [100, 0] },
+                { duration: 1.5, easing: [0.16, 1, 0.3, 1] }
+            );
+            animate(
+                footerElements,
+                { opacity: [0, 1], y: [30, 0] },
+                { delay: stagger(0.1), duration: 1, easing: [0.16, 1, 0.3, 1] }
+            );
+        }, { margin: "-50px" });
+    }
+
+    // --- Live Dhaka Clock ---
+    const updateClock = () => {
+        const clockElement = document.getElementById('live-clock');
+        if (!clockElement) return;
+
+        const now = new Date();
+        const dhakaTime = new Intl.DateTimeFormat('en-GB', {
+            timeZone: 'Asia/Dhaka',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: false
+        }).format(now);
+
+        clockElement.textContent = dhakaTime;
+    };
+
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // Note: Footer dynamic word logic is inlined in index.html for reliability
+
+    // --- Back to Top ---
+    const backToTopBtn = document.getElementById('back-to-top');
+    if (backToTopBtn) {
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
     }
 
     // --- Multi-Step Form Logic ---
@@ -447,6 +497,72 @@ document.addEventListener('DOMContentLoaded', () => {
                     showStep(currentStep);
                 }, 600);
             });
+        });
+    }
+    // 5. Scroll Reveal Observer
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // 6. Magnetic Buttons Logic
+    const magneticBtns = document.querySelectorAll('.btn-cta-nav, .btn-analyze, .btn-next-step, .back-to-top');
+    magneticBtns.forEach(btn => {
+        btn.addEventListener('mousemove', (e) => {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            
+            btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+        });
+        
+        btn.addEventListener('mouseleave', () => {
+            btn.style.transform = `translate(0, 0)`;
+        });
+    });
+
+    // 7. Marquee Pause on Hover
+    const marqueeTrack = document.querySelector('.marquee-track');
+    if (marqueeTrack) {
+        marqueeTrack.addEventListener('mouseenter', () => {
+            marqueeTrack.style.animationPlayState = 'paused';
+        });
+        marqueeTrack.addEventListener('mouseleave', () => {
+            marqueeTrack.style.animationPlayState = 'running';
+        });
+    }
+
+    // 8. Smooth Internal Links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Close mobile menu if open
+            if (mobileMenu && mobileMenu.classList.contains('active')) {
+                mobileMenu.classList.remove('active');
+            }
+
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // 9. Mobile Menu Toggle
+    const mobileMenuTrigger = document.getElementById('mobile-menu-trigger');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (mobileMenuTrigger && mobileMenu) {
+        mobileMenuTrigger.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
         });
     }
 });

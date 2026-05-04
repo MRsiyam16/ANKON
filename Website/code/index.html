@@ -7,10 +7,13 @@
     <meta name="description" content="ANKON transforms complex brand challenges into elegant, intuitive, and high-impact visual systems. Architectural minimalism meets digital precision.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css?v=1.6">
 </head>
 <body>
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+    
     <div id="loader">
         <div class="loader-content">
             <div class="loader-logo">ANKON</div>
@@ -22,7 +25,7 @@
 
     <nav class="navbar">
         <div class="nav-left">
-            <div class="logo">ANKON</div>
+            <img src="AKNON Logo Header.png" alt="ANKON" class="logo-img">
         </div>
         <div class="nav-center">
             <ul class="nav-links">
@@ -34,8 +37,29 @@
         </div>
         <div class="nav-right">
             <button class="btn-cta-nav">START PROJECT</button>
+            <div class="burger" id="mobile-menu-trigger">
+                <span class="line line-1"></span>
+                <span class="line line-2"></span>
+                <span class="line line-3"></span>
+            </div>
         </div>
     </nav>
+
+    <div class="mobile-menu-overlay" id="mobile-menu">
+        <div class="mobile-menu-content">
+            <ul class="mobile-nav-links">
+                <li><a href="#studio">Studio</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#philosophy">Philosophy</a></li>
+                <li><a href="#contact" class="mobile-cta-link">Start Project</a></li>
+            </ul>
+            <div class="mobile-menu-footer">
+                <p>mrsiyam1604@gmail.com</p>
+                <p>Dhaka, 2026</p>
+            </div>
+        </div>
+    </div>
 
     <div class="hero-container">
         <div class="hero-bg-image"></div>
@@ -43,7 +67,7 @@
 
         <main class="hero-content central">
             <div class="hero-center-text">
-                <h1 id="hero-heading">WE DON'T JUST DESIGN,<br>WE <span class="engineer-text">ENGINEER</span></h1>
+                <h1 id="hero-heading">WE DON'T JUST<br class="mobile-only"> DESIGN,<br class="desktop-only"> WE<br class="mobile-only"> <span class="engineer-text">ENGINEER</span></h1>
                 <p class="hero-subheading">We design for the <strong>top 1%</strong>, we design for Growth.</p>
             </div>
 
@@ -59,14 +83,16 @@
                     <div class="chat-messages" id="chat-messages"></div>
                     <div class="chat-input-area">
                         <input type="text" placeholder="My conversion rate is dropping..." id="user-input">
-                        <button class="btn-analyze" id="btn-analyze">ANALIZE</button>
+                        <button class="btn-analyze" id="btn-analyze">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        </button>
                     </div>
                 </div>
             </div>
         </main>
     </div>
 
-    <section class="social-proof" id="portfolio">
+    <section class="social-proof reveal" id="portfolio">
         <p class="social-proof-title">TRUSTED BY INDUSTRY LEADERS</p>
         <div class="marquee-container">
             <div class="marquee-track">
@@ -100,12 +126,11 @@
         </div>
     </section>
 
-    <section class="problem-solution" id="philosophy">
+    <section class="problem-solution reveal" id="philosophy">
         <div class="ps-container">
             <div class="ps-editorial-header">
                 <div class="ps-label-wrapper">
-                    <span class="ps-label">[ THE COST OF COMPROMISE ]</span>
-                    <div class="ps-line"></div>
+                    <span class="ps-label">THE COST OF COMPROMISE</span>
                 </div>
                 <h2 class="ps-mega-title">Average<br>is <span class="italic-text">Invisible.</span></h2>
             </div>
@@ -186,10 +211,10 @@
         </div>
     </section>
 
-    <section class="portfolio-showcase" id="portfolio-section">
+    <section class="portfolio-showcase reveal" id="portfolio-section">
         <div class="port-container">
             <div class="port-header">
-                <span class="port-label">[ SELECTED WORKS ]</span>
+                <span class="port-label">SELECTED WORKS</span>
                 <h2 class="port-title">Proof of Concept</h2>
             </div>
             
@@ -231,11 +256,11 @@
     </section>
 
     <!-- SERVICES SECTION -->
-    <section class="services" id="services-section">
+    <section class="services reveal" id="services-section">
         <div class="services-container">
             <div class="services-header">
                 <div class="services-title-group">
-                    <span class="services-label">[ OUR EXPERTISE ]</span>
+                    <span class="services-label">OUR EXPERTISE</span>
                     <h2 class="services-main-title">Quality Service<br><span class="light-text">You can get</span></h2>
                 </div>
                 <div class="services-description">
@@ -305,10 +330,10 @@
     </section>
 
     <!-- TESTIMONIALS SECTION -->
-    <section class="testimonials" id="testimonials-section">
+    <section class="testimonials reveal" id="testimonials-section">
         <div class="testimonials-container">
             <div class="test-header">
-                <span class="test-label">[ CLIENT VOICES ]</span>
+                <span class="test-label">CLIENT VOICES</span>
                 <h2 class="test-title">Trusted by <br><span class="italic-text">200+ Companies.</span></h2>
             </div>
 
@@ -365,46 +390,80 @@
         </div>
     </section>
     
-    <!-- Contact Section -->
-    <section class="contact-cta" id="contact">
+    <section class="contact-cta reveal" id="contact">
         <div class="container">
-            <div class="contact-wrapper">
-                <span class="section-label">[ WORK WITH US ]</span>
-                
-                <div class="step-form-wrapper" id="step-form">
-                    <div class="step-container active" data-step="1">
-                        <h3 class="step-question">First, what should we call you?</h3>
-                        <div class="input-field">
-                            <input type="text" id="contact-name" placeholder="Type your name here..." autocomplete="name">
-                            <div class="focus-line"></div>
+            <div class="contact-grid">
+                <div class="contact-left">
+                    <span class="section-label">WORK WITH US</span>
+                    
+                    <div class="step-form-wrapper" id="step-form">
+                        <div class="step-container active" data-step="1">
+                            <h3 class="step-question">First, what should we call you?</h3>
+                            <div class="form-row">
+                                <div class="input-field">
+                                    <input type="text" id="contact-name" placeholder="Type your name here..." autocomplete="name">
+                                    <div class="focus-line"></div>
+                                </div>
+                                <button class="btn-next-step">CONTINUE</button>
+                            </div>
                         </div>
-                        <button class="btn-next-step">CONTINUE</button>
-                    </div>
 
-                    <div class="step-container" data-step="2">
-                        <h3 class="step-question">Which service drives your interest?</h3>
-                        <div class="option-grid">
-                            <button class="option-btn" data-value="UI/UX Design">UI/UX DESIGN</button>
-                            <button class="option-btn" data-value="Web Engineering">WEB ENGINEERING</button>
-                            <button class="option-btn" data-value="Branding">BRANDING</button>
-                            <button class="option-btn" data-value="Growth Consulting">GROWTH CONSULTING</button>
+                        <div class="step-container" data-step="2">
+                            <h3 class="step-question">Which service drives your interest?</h3>
+                            <div class="option-grid">
+                                <button class="option-btn" data-value="UI/UX Design">UI/UX DESIGN</button>
+                                <button class="option-btn" data-value="Web Engineering">WEB ENGINEERING</button>
+                                <button class="option-btn" data-value="Branding">BRANDING</button>
+                                <button class="option-btn" data-value="Growth Consulting">GROWTH CONSULTING</button>
+                            </div>
+                        </div>
+
+                        <div class="step-container" data-step="3">
+                            <h3 class="step-question">Where can we send our analysis?</h3>
+                            <div class="form-row">
+                                <div class="input-field">
+                                    <input type="email" id="contact-email" placeholder="Email Address" autocomplete="email">
+                                    <div class="focus-line"></div>
+                                </div>
+                                <button class="btn-next-step">COMPLETE</button>
+                            </div>
+                        </div>
+
+                        <div class="step-container" data-step="4" id="form-success">
+                            <div class="success-content">
+                                <div class="success-icon">&check;</div>
+                                <h3 class="step-question">Transmission Received</h3>
+                                <p>Our lead architect will contact you within 24 hours.</p>
+                            </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="step-container" data-step="3">
-                        <h3 class="step-question">Where can we send our analysis?</h3>
-                        <div class="input-field">
-                            <input type="email" id="contact-email" placeholder="Email Address" autocomplete="email">
-                            <div class="focus-line"></div>
+                <div class="contact-right">
+                    <div class="contact-faq">
+                        <div class="faq-item">
+                            <span class="faq-number">01</span>
+                            <div class="faq-content">
+                                <h4>How long does a typical project take?</h4>
+                                <p>Strategic design and engineering cycles usually range from 4 to 12 weeks depending on scope.</p>
+                            </div>
+                            <div class="faq-arrow">&rarr;</div>
                         </div>
-                        <button class="btn-next-step">COMPLETE INQUIRY</button>
-                    </div>
-
-                    <div class="step-container" data-step="4" id="form-success">
-                        <div class="success-content">
-                            <div class="success-icon">&check;</div>
-                            <h3 class="step-question">Transmission Received</h3>
-                            <p>Our lead architect will contact you within 24 hours.</p>
+                        <div class="faq-item">
+                            <span class="faq-number">02</span>
+                            <div class="faq-content">
+                                <h4>Do you offer maintenance?</h4>
+                                <p>Yes, we provide ongoing growth-focused technical support and design evolution for all our partners.</p>
+                            </div>
+                            <div class="faq-arrow">&rarr;</div>
+                        </div>
+                        <div class="faq-item">
+                            <span class="faq-number">03</span>
+                            <div class="faq-content">
+                                <h4>What is Functional Luxury?</h4>
+                                <p>It's our philosophy of blending high-end, minimalist aesthetics with high-performance, conversion-optimized code.</p>
+                            </div>
+                            <div class="faq-arrow">&rarr;</div>
                         </div>
                     </div>
                 </div>
@@ -414,39 +473,109 @@
 
     <footer class="footer">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <div class="logo">ANKON</div>
-                    <p>Engineering digital excellence for the top 1%.</p>
+            <div class="footer-top">
+                <div class="footer-brand-area">
+                    <h2 class="footer-cta-text">
+                        Lets <span id="dynamic-word">DESIGN</span><br>
+                        Something incredible together.
+                    </h2>
+                    <div class="footer-contact-info">
+                        <a href="mailto:mrsiyam1604@gmail.com" class="footer-contact-link">mrsiyam1604@gmail.com</a>
+                        <a href="https://api.whatsapp.com/send/?phone=8801931418514&text&type=phone_number&app_absent=0" target="_blank" class="footer-contact-link">WhatsApp / +880 1931 418514</a>
+                    </div>
                 </div>
-                <div class="footer-links">
+                <div class="footer-nav">
                     <div class="footer-col">
-                        <h4>STUDIO</h4>
-                        <a href="#services">Services</a>
-                        <a href="#portfolio">Portfolio</a>
-                        <a href="#philosophy">Philosophy</a>
+                        <h4>EXPLORE</h4>
+                        <a href="#studio" class="footer-link">Studio</a>
+                        <a href="#services" class="footer-link">Services</a>
+                        <a href="#portfolio" class="footer-link">Portfolio</a>
+                        <a href="#philosophy" class="footer-link">Philosophy</a>
                     </div>
                     <div class="footer-col">
                         <h4>LEGAL</h4>
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms of Service</a>
+                        <a href="#" class="footer-link">Privacy Policy</a>
+                        <a href="#" class="footer-link">Terms of Service</a>
                     </div>
                     <div class="footer-col">
-                        <h4>CONNECT</h4>
-                        <a href="#">X / Twitter</a>
-                        <a href="#">LinkedIn</a>
-                        <a href="#">Instagram</a>
+                        <h4>SOCIAL</h4>
+                        <a href="#" class="footer-link">X / Twitter</a>
+                        <a href="#" class="footer-link">LinkedIn</a>
+                        <a href="#" class="footer-link">Instagram</a>
                     </div>
                 </div>
             </div>
+
+            <div class="footer-middle">
+                <h2 class="footer-giant-text">ANKON</h2>
+            </div>
+
             <div class="footer-bottom">
-                <p>&copy; 2024 ANKON AGENCY. ALL RIGHTS RESERVED.</p>
-                <p>CRAFTED IN ZURICH.</p>
+                <div class="footer-info">
+                    <p>&copy; 2026 ANKON AGENCY. ALL RIGHTS RESERVED.</p>
+                    <div class="location-time">
+                        <span class="label">DHAKA //</span>
+                        <span id="live-clock">00:00:00</span>
+                    </div>
+                </div>
+                <button class="back-to-top" id="back-to-top">
+                    <span class="arrow">&uarr;</span>
+                    <span class="text">BACK TO TOP</span>
+                </button>
             </div>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/motion@11.11.13/dist/motion.global.js"></script>
+    <script>
+        // Bulletproof Footer Animation
+        (function() {
+            const words = ['DESIGN', 'CREATE', 'BUILD'];
+            let currentIndex = 0;
+
+            const updateWord = () => {
+                const dynamicWord = document.getElementById('dynamic-word');
+                if (!dynamicWord) return;
+
+                const motionLib = window.Motion || window.motion;
+                
+                if (motionLib && typeof motionLib.animate === 'function') {
+                    // Use Motion library for premium animation
+                    motionLib.animate(dynamicWord, { opacity: 0, y: -20 }, { duration: 0.4 }).finished.then(() => {
+                        currentIndex = (currentIndex + 1) % words.length;
+                        dynamicWord.textContent = words[currentIndex];
+                        // Reset to bottom position instantly before sliding up
+                        motionLib.animate(dynamicWord, { y: 20 }, { duration: 0 });
+                        motionLib.animate(dynamicWord, { opacity: 1, y: 0 }, { duration: 0.4 });
+                    });
+                } else {
+                    // Fallback to smooth CSS transition if Motion isn't ready
+                    dynamicWord.style.opacity = 0;
+                    dynamicWord.style.transform = 'translateY(-20px)';
+                    
+                    setTimeout(() => {
+                        currentIndex = (currentIndex + 1) % words.length;
+                        dynamicWord.textContent = words[currentIndex];
+                        
+                        // Move to bottom instantly
+                        dynamicWord.style.transition = 'none';
+                        dynamicWord.style.transform = 'translateY(20px)';
+                        
+                        // Force reflow
+                        dynamicWord.offsetHeight;
+                        
+                        // Slide up to center
+                        dynamicWord.style.transition = 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
+                        dynamicWord.style.opacity = 1;
+                        dynamicWord.style.transform = 'translateY(0px)';
+                    }, 500);
+                }
+            };
+
+            // Start cycling every 3 seconds
+            setInterval(updateWord, 3000);
+        })();
+    </script>
     <script src="main.js?v=1.6"></script>
 </body>
 </html>
